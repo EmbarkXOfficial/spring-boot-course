@@ -18,9 +18,7 @@ public class SocialUser {
     private Long id;
 
     @OneToOne(mappedBy = "user",
-            cascade = {CascadeType.REMOVE, CascadeType.PERSIST, CascadeType.MERGE},
-            fetch = FetchType.LAZY
-    )
+            cascade = {CascadeType.REMOVE, CascadeType.PERSIST, CascadeType.MERGE})
     //@JoinColumn(name = "social_profile_id")
     private SocialProfile socialProfile;
 
