@@ -9,10 +9,10 @@ Welcome to your one-stop-shop for mastering Java and Spring Boot! This repositor
 Here’s a structured path to enhance your skills with detailed courses available:
 
 1. **[Spring Boot By Building Complex Projects Step by Step](https://link.embarkx.com/spring-boot) (47+ Hours of Content)**
-2. **[Master Spring Boot Microservices](https://link.embarkx.com/microservices)**
-3. **[Learn Java with 60+ Hours of Content](http://link.embarkx.com/java)**
-4. **[Master Spring Security with React JS + OAuth2](https://link.embarkx.com/spring-security)**
-5. **[Master IntelliJ IDEA](http://link.embarkx.com/intellij)**
+2. **[Master Spring Boot Microservices](https://link.embarkx.com/microservices) (23+ Hours of Content)**
+3. **[Learn Java with 60+ Hours of Content](http://link.embarkx.com/java) (60+ Hours of Content)**
+4. **[Master Spring Security with React JS + OAuth2](https://link.embarkx.com/spring-security) (23+ Hours of Content)**
+5. **[Master IntelliJ IDEA](http://link.embarkx.com/intellij) (3+ Hours of Content)**
 
 
 ## 🌟 With All Our Courses You Gain Access To
