@@ -30,3 +30,48 @@ With this series, you're not just learning; you're preparing to dominate the fie
 ### Join Us Now!
 
 Start your journey today to become a master at Java and Spring Boot. Our community and expert instructors are here to support your learning every step of the way. **Enroll and start building your future, today!**
+
+
+
+
+
+# Usage Policy for Course Materials
+
+## Instructor Information
+
+**Instructor:** Faisal Memon  
+**Company:** [EmbarkX.com](http://www.embarkx.com)
+
+## Policy Overview
+
+This document outlines the guidelines and restrictions concerning the use of course materials provided by EmbarkX, including but not limited to PDF presentations, code samples, and video tutorials.
+
+### 1. Personal Use Only
+
+The materials provided in this course are intended for **your personal use only**. They are to be used solely for the purpose of learning and completing this course.
+
+### 2. No Unauthorized Sharing or Distribution
+
+You are **not permitted** to share, distribute, or publicly post any course materials on any websites, social media platforms, or other public forums without prior written consent from the instructor.
+
+### 3. Intellectual Property
+
+All course materials are protected by copyright laws and are the intellectual property of Faisal Memon and EmbarkX. Unauthorized use, reproduction, or distribution of these materials is **strictly prohibited**.
+
+### 4. Reporting Violations
+
+If you become aware of any unauthorized sharing or distribution of course materials, please report it immediately to [embarkxofficial@gmail.com](mailto:embarkxofficial@gmail.com).
+
+### 5. Legal Action
+
+We reserve the right to take legal action against individuals or entities found to be violating this usage policy.
+
+## Thank You
+
+Thank you for respecting these guidelines and helping us maintain the integrity of our course materials.
+
+## Contact Information
+
+- **Email:** [embarkxofficial@gmail.com](mailto:embarkxofficial@gmail.com)
+- **Website:** [www.embarkx.com](http://www.embarkx.com)
+
