@@ -2,7 +2,7 @@ This is the Official repository of **Java Spring Boot: Professional eCommerce Pr
 
 # The Ultimate Java and Spring Boot Mastery
 
-Welcome to your one-stop-shop for mastering Java and Spring Boot! This repository offers a comprehensive learning experience with high-quality resources and community support. Dive into over 23+ hours of premium content, with everything you need to excel at Java and Spring Boot development.
+Welcome to your one-stop-shop for mastering Java and Spring Boot! This repository offers a comprehensive learning experience with high-quality resources and community support. Dive into over 150+ hours of premium content, with everything you need to excel at Java and Spring Boot development.
 
 ## 🎓 Learning Roadmap
 
