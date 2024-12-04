@@ -2,6 +2,7 @@ import { MdArrowBack, MdShoppingCart } from "react-icons/md";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import ItemContent from "./ItemContent";
+import CartEmpty from "./CartEmpty";
 
 const Cart = () => {
     const dispatch = useDispatch();
@@ -12,7 +13,7 @@ const Cart = () => {
         (acc, cur) => acc * Number(cur?.specialPrice) * Number(cur?.quantity), 0
     );
 
-    if (!cart || cart.length === 0) return <h1>Cart is Empty</h1>;
+    if (!cart || cart.length === 0) return <CartEmpty />;
 
     return (
         <div className="lg:px-14 sm:px-8 px-4 py-10">
