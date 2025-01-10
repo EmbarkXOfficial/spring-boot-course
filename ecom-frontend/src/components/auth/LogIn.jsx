@@ -3,14 +3,19 @@ import { useForm } from "react-hook-form";
 import { AiOutlineLogin } from "react-icons/ai";
 import { Link, useNavigate } from "react-router-dom";
 import InputField from "../shared/InputField";
+import { useDispatch } from "react-redux";
+import { authenticateSignInUser } from "../../store/actions";
+import toast from "react-hot-toast";
 
 const LogIn = () => {
     const navigate = useNavigate();
+    const dispatch = useDispatch();
     const [loader, setLoader] = useState(false);
 
     const {
         register,
         handleSubmit,
+        reset,
         formState: {errors},
     } = useForm({
         mode: "onTouched",
@@ -18,6 +23,7 @@ const LogIn = () => {
 
     const loginHandler = async (data) => {
         console.log("Login Click");
+        dispatch(authenticateSignInUser(data, toast, reset, navigate, setLoader));
     };
 
     return (
