@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import InputField from '../shared/InputField'
 import { useForm } from 'react-hook-form';
 import { FaAddressCard } from 'react-icons/fa';
@@ -14,6 +14,7 @@ const AddAddressForm = ({ address, setOpenAddressModal }) => {
             register,
             handleSubmit,
             reset,
+            setValue,
             formState: {errors},
         } = useForm({
             mode: "onTouched",
@@ -28,6 +29,18 @@ const AddAddressForm = ({ address, setOpenAddressModal }) => {
             ));
         };
 
+
+        useEffect(() => {
+            if (address?.addressId) {
+                setValue("buildingName", address?.buildingName);
+                setValue("city", address?.city);
+                setValue("street", address?.street);
+                setValue("state", address?.state);
+                setValue("pincode", address?.pincode);
+                setValue("country", address?.country);
+            }
+        }, [address]);
+
   return (
     <div className="">
             <form
@@ -35,7 +48,11 @@ const AddAddressForm = ({ address, setOpenAddressModal }) => {
                 className="">
                     <div className="flex justify-center items-center mb-4 font-semibold text-2xl text-slate-800 py-2 px-4">
                         <FaAddressCard className="mr-2 text-2xl"/>
-                        Add Address
+                        {!address?.addressId ? 
+                        "Add Address" :
+                        "Update Address"
+                        }
+                        
                     </div>
             <div className="flex flex-col gap-4">
                 <InputField
