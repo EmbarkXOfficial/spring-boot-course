@@ -54,7 +54,7 @@ const Checkout = () => {
             ))}
         </Stepper>
 
-        {false ? (
+        {isLoading ? (
             <div className='lg:w-[80%] mx-auto py-5'>
                 <Skeleton />
             </div>
