@@ -8,6 +8,8 @@ import Skeleton from '../shared/Skeleton';
 import ErrorPage from '../shared/ErrorPage';
 import PaymentMethod from './PaymentMethod';
 import OrderSummary from './OrderSummary';
+import StripePayment from './StripePayment';
+import PaypalPayment from './PaypalPayment';
 
 const Checkout = () => {
     const [activeStep, setActiveStep] = useState(0);
@@ -71,6 +73,14 @@ const Checkout = () => {
                                         cart={cart}
                                         address={selectedUserCheckoutAddress}
                                         paymentMethod={paymentMethod}/>}
+                {activeStep === 3 && 
+                    <>
+                        {paymentMethod === "Stripe" ? (
+                            <StripePayment />
+                        ) : (
+                            <PaypalPayment />
+                        )}
+                    </>}
             </div>
         )}
         
