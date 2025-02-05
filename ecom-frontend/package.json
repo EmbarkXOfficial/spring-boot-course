@@ -15,6 +15,8 @@
     "@headlessui/react": "^2.2.0",
     "@mui/material": "^6.1.8",
     "@reduxjs/toolkit": "^2.3.0",
+    "@stripe/react-stripe-js": "^3.1.1",
+    "@stripe/stripe-js": "^5.6.0",
     "axios": "^1.7.7",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
