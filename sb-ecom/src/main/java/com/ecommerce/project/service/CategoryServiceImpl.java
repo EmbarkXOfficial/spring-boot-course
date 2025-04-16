@@ -77,6 +77,14 @@ public class CategoryServiceImpl implements CategoryService{
                 .orElseThrow(() -> new ResourceNotFoundException("Category","categoryId",categoryId));
 
         Category category = modelMapper.map(categoryDTO, Category.class);
+
+        //To implement unique categoryName before updating the record.
+        Category savedCategoryName = categoryRepository.findByCategoryName(category.getCategoryName());
+
+        if(savedCategoryName != null){
+            throw new APIException("Category with name " + category.getCategoryName() + " already exists!");
+        }
+
         category.setCategoryId(categoryId);
         savedCategory = categoryRepository.save(category);
         return modelMapper.map(savedCategory, CategoryDTO.class);
