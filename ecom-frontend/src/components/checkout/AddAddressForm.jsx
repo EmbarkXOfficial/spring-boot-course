@@ -123,7 +123,7 @@ const AddAddressForm = ({ address, setOpenAddressModal }) => {
 
             <button
                 disabled={btnLoader}
-                className="text-white bg-customBlue px-4 py-2 rounded-md mt-4"
+                className="text-white bg-custom-blue px-4 py-2 rounded-md mt-4"
                 type="submit">
                 {btnLoader ? (
                     <>

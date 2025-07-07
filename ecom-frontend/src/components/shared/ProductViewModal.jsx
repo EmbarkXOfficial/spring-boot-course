@@ -22,7 +22,7 @@ function ProductViewModal({open, setOpen, product, isAvailable}) {
               className="relative transform overflow-hidden rounded-lg bg-white shadow-xl transition-all md:max-w-[620px] md:min-w-[620px] w-full"
             >
                 {image && (
-                    <div className='flex justify-center aspect-[3/2]'>
+                    <div className='flex justify-center aspect-3/2'>
                     <img 
                     src={image}
                     alt={productName} />

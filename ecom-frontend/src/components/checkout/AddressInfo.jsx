@@ -45,7 +45,7 @@ const AddressInfo = ({ address }) => {
 
                 <button
                     onClick={addNewAddressHandler}
-                    className='px-4 py-2 bg-blue-600 text-white font-medium rounded hover:bg-blue-700 transition-all'>
+                    className='px-4 py-2 bg-blue-600 text-white font-medium rounded-sm hover:bg-blue-700 transition-all'>
                     Add Address
                 </button>
             </div>
@@ -74,7 +74,7 @@ const AddressInfo = ({ address }) => {
                     <div className='mt-4'>
                         <button 
                             onClick={addNewAddressHandler}
-                            className='px-4 py-2 bg-blue-600 text-white font-medium rounded hover:bg-blue-700 transition-all'>
+                            className='px-4 py-2 bg-blue-600 text-white font-medium rounded-sm hover:bg-blue-700 transition-all'>
                                 Add More
                         </button>
                     </div>

@@ -20,7 +20,7 @@ const Contact = () => {
                         <input 
                             type="text"
                             required
-                            className="mt-1 block w-full border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus: ring-blue-500"/>
+                            className="mt-1 block w-full border border-gray-300 rounded-lg p-2 focus:outline-hidden focus:ring-2 focus: ring-blue-500"/>
                     </div>
 
 
@@ -31,7 +31,7 @@ const Contact = () => {
                         <input 
                             type="email"
                             required
-                            className="mt-1 block w-full border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus: ring-blue-500"/>
+                            className="mt-1 block w-full border border-gray-300 rounded-lg p-2 focus:outline-hidden focus:ring-2 focus: ring-blue-500"/>
                     </div>
 
                     <div>
@@ -41,7 +41,7 @@ const Contact = () => {
                         <textarea 
                             rows="4"
                             required
-                            className="mt-1 block w-full border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus: ring-blue-500"/>
+                            className="mt-1 block w-full border border-gray-300 rounded-lg p-2 focus:outline-hidden focus:ring-2 focus: ring-blue-500"/>
                     </div>
 
                     <button className="w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600 transition duration-300">

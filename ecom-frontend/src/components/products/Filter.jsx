@@ -72,7 +72,7 @@ const Filter = ({ categories }) => {
                     placeholder="Search Products"
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
-                    className="border border-gray-400 text-slate-800 rounded-md py-2 pl-10 pr-4 w-full focus:outline-none focus:ring-2 focus:ring-[#1976d2]"/>
+                    className="border border-gray-400 text-slate-800 rounded-md py-2 pl-10 pr-4 w-full focus:outline-hidden focus:ring-2 focus:ring-[#1976d2]"/>
                 <FiSearch className="absolute left-3 text-slate-800 size={20}"/>
             </div>
 
@@ -115,7 +115,7 @@ const Filter = ({ categories }) => {
                     </Button>
                 </Tooltip>
                 <button 
-                className="flex items-center gap-2 bg-rose-900 text-white px-3 py-2 rounded-md transition duration-300 ease-in shadow-md focus:outline-none"
+                className="flex items-center gap-2 bg-rose-900 text-white px-3 py-2 rounded-md transition duration-300 ease-in shadow-md focus:outline-hidden"
                 onClick={handleClearFilters}
                 >
                     <FiRefreshCw className="font-semibold" size={16}/>
