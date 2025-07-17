@@ -14,7 +14,7 @@
 	<name>sb-ecom</name>
 	<description>Spring Boot Ecommerce Project</description>
 	<properties>
-		<java.version>17</java.version>
+		<java.version>24</java.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -33,7 +33,7 @@
 		<dependency>
 			<groupId>com.stripe</groupId>
 			<artifactId>stripe-java</artifactId>
-			<version>28.0.0</version>
+			<version>29.3.0</version>
 		</dependency>
 		<dependency>
 			<groupId>org.postgresql</groupId>
