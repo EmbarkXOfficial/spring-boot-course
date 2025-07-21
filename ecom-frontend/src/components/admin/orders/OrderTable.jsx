@@ -1,9 +1,10 @@
 import { DataGrid } from '@mui/x-data-grid'
 import { adminOrderTableColumn } from '../../helper/tableColumn';
 import { useState } from 'react';
-import { useLocation, useSearchParams } from 'react-router-dom';
+import { useLocation, useNavigate, useSearchParams } from 'react-router-dom';
 
 const OrderTable = ({ adminOrder, pagination}) => {
+  const navigate = useNavigate();
   const [currentPage, setCurrentPage] = useState(
     pagination?.pageNumber + 1 || 1
   );
@@ -26,7 +27,7 @@ const handlePaginationChange = (paginationModel) => {
   const page = paginationModel.page + 1;
   setCurrentPage(page);
   params.set("page", page.toString());
-  Navigate(`${pathname}?${params}`)
+  navigate(`${pathname}?${params}`)
 }
 
   return (
