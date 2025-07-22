@@ -2,6 +2,9 @@ import { Button, FormControl, FormHelperText, InputLabel, MenuItem, Select } fro
 import React, { useState } from 'react'
 import { FaSpinner } from 'react-icons/fa';
 import Spinners from '../../shared/Spinners';
+import { useDispatch } from 'react-redux';
+import { updateOrderStatusFromDashboard } from '../../../store/actions';
+import toast from 'react-hot-toast';
 
 const ORDER_STATUSES = [
     "Pending",
@@ -15,10 +18,25 @@ const ORDER_STATUSES = [
 const UpdateOrderForm = ({ setOpen, selectedId, selectedItem, loader, setLoader}) => {
     const [orderStatus, setOrderStatus] = useState(selectedItem?.status || 'Accepted');
     const [error, setError] = useState("");
+    const dispatch = useDispatch();
+
+    const updateOrderStatus = (e) => {
+        e.preventDefault();
+        if (!orderStatus) {
+            setError("Order status is required");
+            return;
+        }
+        dispatch(updateOrderStatusFromDashboard(
+            selectedId,
+            orderStatus,
+            toast,
+            setLoader
+        ));
+    };
 
   return (
     <div className='py-5 relative h-full'>
-        <form className='space-y-4' onSubmit={""}>
+        <form className='space-y-4' onSubmit={updateOrderStatus}>
             <FormControl fullWidth variant='outlined' error={!!error}>
                 <InputLabel id="order-status-label">Order Status</InputLabel>
                 <Select
