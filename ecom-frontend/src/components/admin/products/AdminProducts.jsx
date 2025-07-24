@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { MdAddShoppingCart } from 'react-icons/md';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import Loader from '../../shared/Loader';
 import { FaBoxOpen } from 'react-icons/fa';
 import { DataGrid } from '@mui/x-data-grid';
@@ -9,6 +9,8 @@ import { useDashboardProductFilter } from '../../../hooks/useProductFilter';
 import Modal from '../../shared/Modal';
 import AddProductForm from './AddProductForm';
 import DeleteModal from '../../shared/DeleteModal';
+import { deleteProduct } from '../../../store/actions';
+import toast from 'react-hot-toast';
 
 const AdminProducts = () => {
   // const products = [{ "productId": 52, "productName": "iPad Pro", "image": "http://localhost:8080/images/7a7b38c4-2342-4d10-89e9-2c5b3c4fdb44.png", "description": "High-performance Tablet with a 4K display and powerful camera", "quantity": 30, "price": 1800.0, "discount": 43.0, "specialPrice": 1026.0 }, { "productId": 2, "productName": "iPhone 16 Pro Max", "image": "http://localhost:8080/images/22185fd1-024a-4708-9a10-832b8a50bfde.png", "description": "High-performance phone with a 4K display and powerful camera", "quantity": 19, "price": 1400.0, "discount": 23.0, "specialPrice": 1078.0 }];
@@ -19,11 +21,15 @@ const AdminProducts = () => {
   const [currentPage, setCurrentPage] = useState(
       pagination?.pageNumber + 1 || 1
     );
+
+  const dispatch = useDispatch();
   
   const [selectedProduct, setSelectedProduct] = useState('');
   const [openUpdateModal, setOpenUpdateModal] = useState(false);
   const [openAddModal, setOpenAddModal] = useState(false);
   const [openDeleteModal, setOpenDeleteModal] = useState(false);
+
+  const [loader, setLoader] = useState(false);
 
   useDashboardProductFilter();
 
@@ -63,6 +69,10 @@ const handlePaginationChange = (paginationModel) => {
 
 };
 
+
+const onDeleteHandler = () => {
+  dispatch(deleteProduct(setLoader, selectedProduct?.id, toast, setOpenDeleteModal));
+};
 
   const emptyProduct = !products || products?.length ===0;
   return (
@@ -143,8 +153,9 @@ const handlePaginationChange = (paginationModel) => {
     <DeleteModal
       open={openDeleteModal}
       setOpen={setOpenDeleteModal}
+      loader={loader}
       title="Delete Product"
-      onDeleteHandler={() => {}} />
+      onDeleteHandler={onDeleteHandler} />
     </div>
   )
 }

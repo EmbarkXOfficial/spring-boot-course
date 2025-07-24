@@ -415,3 +415,21 @@ export const updateProductFromDashboard =
      
     }
 };
+
+
+export const deleteProduct = 
+    (setLoader, productId, toast, setOpenDeleteModal) => async (dispatch, getState) => {
+    try {
+        setLoader(true)
+        await api.delete(`/admin/products/${productId}`);
+        toast.success("Product deleted successfully");
+        setLoader(false);
+        setOpenDeleteModal(false);
+        await dispatch(dashboardProductsAction());
+    } catch (error) {
+        console.log(error);
+        toast.error(
+            error?.response?.data?.message || "Some Error Occured"
+        )
+    }
+};
