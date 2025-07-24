@@ -21,6 +21,7 @@ const AdminProducts = () => {
   
   const [selectedProduct, setSelectedProduct] = useState('');
   const [openUpdateModal, setOpenUpdateModal] = useState(false);
+  const [openAddModal, setOpenAddModal] = useState(false);
 
   useDashboardProductFilter();
 
@@ -65,6 +66,7 @@ const handlePaginationChange = (paginationModel) => {
     <div>
       <div className='pt-6 pb-10 flex justify-end'>
         <button
+          onClick={() => setOpenAddModal(true)}
           className='bg-custom-blue hover:bg-blue-800 text-white font-semibold py-2 px-4 flex items-center gap-2 rounded-md shadow-md transition-colors hover:text-slate-300 duration-300'>
           <MdAddShoppingCart className='text-xl' />
           Add Product
@@ -124,11 +126,11 @@ const handlePaginationChange = (paginationModel) => {
     )}
 
     <Modal
-      open={openUpdateModal}
-      setOpen={setOpenUpdateModal}
-      title="Update Product">
+      open={openUpdateModal || openAddModal}
+      setOpen={openUpdateModal ? setOpenUpdateModal : setOpenAddModal}
+      title={openUpdateModal ? "Update Product" : "Add Product"}>
         <AddProductForm 
-          setOpen={setOpenUpdateModal}
+          setOpen={openUpdateModal ? setOpenUpdateModal : setOpenAddModal}
           product={selectedProduct}
           update={openUpdateModal}
           />
