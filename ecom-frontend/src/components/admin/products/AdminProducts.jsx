@@ -12,6 +12,7 @@ import DeleteModal from '../../shared/DeleteModal';
 import { deleteProduct } from '../../../store/actions';
 import toast from 'react-hot-toast';
 import ImageUploadForm from './ImageUploadForm';
+import ProductViewModal from '../../shared/ProductViewModal';
 
 const AdminProducts = () => {
   // const products = [{ "productId": 52, "productName": "iPad Pro", "image": "http://localhost:8080/images/7a7b38c4-2342-4d10-89e9-2c5b3c4fdb44.png", "description": "High-performance Tablet with a 4K display and powerful camera", "quantity": 30, "price": 1800.0, "discount": 43.0, "specialPrice": 1026.0 }, { "productId": 2, "productName": "iPhone 16 Pro Max", "image": "http://localhost:8080/images/22185fd1-024a-4708-9a10-832b8a50bfde.png", "description": "High-performance phone with a 4K display and powerful camera", "quantity": 19, "price": 1400.0, "discount": 23.0, "specialPrice": 1078.0 }];
@@ -29,6 +30,7 @@ const AdminProducts = () => {
   const [openUpdateModal, setOpenUpdateModal] = useState(false);
   const [openAddModal, setOpenAddModal] = useState(false);
   const [openDeleteModal, setOpenDeleteModal] = useState(false);
+  const [openProductViewModal, setOpenProductViewModal] = useState(false);
   const [openImageUploadModal, setOpenImageUploadModal] = useState(false);
 
   const [loader, setLoader] = useState(false);
@@ -64,7 +66,8 @@ const handleImageUpload = (product) => {
 };
 
 const handleProductView = (product) => {
-
+  setSelectedProduct(product);
+  setOpenProductViewModal(true);
 };
 
 
@@ -170,6 +173,12 @@ const onDeleteHandler = () => {
       loader={loader}
       title="Delete Product"
       onDeleteHandler={onDeleteHandler} />
+
+      <ProductViewModal 
+        open={openProductViewModal}
+        setOpen={setOpenProductViewModal}
+        product={selectedProduct}
+      />
     </div>
   )
 }
