@@ -13,6 +13,7 @@ import { deleteProduct } from '../../../store/actions';
 import toast from 'react-hot-toast';
 import ImageUploadForm from './ImageUploadForm';
 import ProductViewModal from '../../shared/ProductViewModal';
+import { useLocation, useNavigate, useSearchParams } from 'react-router-dom';
 
 const AdminProducts = () => {
   // const products = [{ "productId": 52, "productName": "iPad Pro", "image": "http://localhost:8080/images/7a7b38c4-2342-4d10-89e9-2c5b3c4fdb44.png", "description": "High-performance Tablet with a 4K display and powerful camera", "quantity": 30, "price": 1800.0, "discount": 43.0, "specialPrice": 1026.0 }, { "productId": 2, "productName": "iPhone 16 Pro Max", "image": "http://localhost:8080/images/22185fd1-024a-4708-9a10-832b8a50bfde.png", "description": "High-performance phone with a 4K display and powerful camera", "quantity": 19, "price": 1400.0, "discount": 23.0, "specialPrice": 1078.0 }];
@@ -34,6 +35,11 @@ const AdminProducts = () => {
   const [openImageUploadModal, setOpenImageUploadModal] = useState(false);
 
   const [loader, setLoader] = useState(false);
+
+  const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
+  const params = new URLSearchParams(searchParams);
+  const pathname = useLocation().pathname;
 
   useDashboardProductFilter();
 
@@ -72,7 +78,10 @@ const handleProductView = (product) => {
 
 
 const handlePaginationChange = (paginationModel) => {
-
+  const page = paginationModel.page + 1;
+  setCurrentPage(page);
+  params.set("page", page.toString());
+  navigate(`${pathname}?${params}`)
 };
 
 
