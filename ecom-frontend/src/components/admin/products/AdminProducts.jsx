@@ -41,6 +41,9 @@ const AdminProducts = () => {
   const params = new URLSearchParams(searchParams);
   const pathname = useLocation().pathname;
 
+  const { user } = useSelector((state) => state.auth);
+  const isAdmin = user && user?.roles?.includes("ROLE_ADMIN");
+
   useDashboardProductFilter();
 
   const tableRecords = products?.map((item) => {
@@ -86,7 +89,7 @@ const handlePaginationChange = (paginationModel) => {
 
 
 const onDeleteHandler = () => {
-  dispatch(deleteProduct(setLoader, selectedProduct?.id, toast, setOpenDeleteModal));
+  dispatch(deleteProduct(setLoader, selectedProduct?.id, toast, setOpenDeleteModal, isAdmin));
 };
 
   const emptyProduct = !products || products?.length ===0;

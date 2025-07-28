@@ -15,6 +15,8 @@ const [loader, setLoader] = useState(false);
 const [selectedCategory, setSelectedCategory] = useState();
 const { categories } = useSelector((state) => state.products);
 const { categoryLoader, errorMessage } = useSelector((state) => state.errors);
+const { user } = useSelector((state) => state.auth);
+const isAdmin = user && user?.roles?.includes("ROLE_ADMIN");
 
 const dispatch = useDispatch();
     const {
@@ -35,7 +37,7 @@ const dispatch = useDispatch();
                 ...data,
                 id: product.id,
             };
-            dispatch(updateProductFromDashboard(sendData, toast, reset, setLoader, setOpen));
+            dispatch(updateProductFromDashboard(sendData, toast, reset, setLoader, setOpen, isAdmin));
         }
     };
 
