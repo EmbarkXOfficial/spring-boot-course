@@ -16,6 +16,7 @@ const UserMenu = () => {
     const navigate = useNavigate();
 
     const isAdmin = user && user?.roles.includes("ROLE_ADMIN");
+    const isSeller = user && user?.roles.includes("ROLE_SELLER");
 
     const handleClick = (event) => {
       setAnchorEl(event.currentTarget);
@@ -68,13 +69,13 @@ const UserMenu = () => {
             </MenuItem>
           </Link>
 
-          { isAdmin && (
-          <Link to="/admin">
+          { (isAdmin || isSeller) && (
+          <Link to={isAdmin ? "/admin" : "/admin/orders"}>
             <MenuItem className="flex gap-2" 
                 onClick={handleClose}>
                     <FaUserShield className='text-xl'/>
                     <span className='font-semibold'>
-                        Admin Panel
+                        {isAdmin ? "Admin Panel" : "Seller Panel"}
                     </span>
             </MenuItem>
           </Link> )}
