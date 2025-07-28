@@ -335,10 +335,11 @@ export const analyticsAction = () => async (dispatch, getState) => {
         }
 };
 
-export const getOrdersForDashboard = (queryString) => async (dispatch) => {
+export const getOrdersForDashboard = (queryString, isAdmin) => async (dispatch) => {
     try {
         dispatch({ type: "IS_FETCHING" });
-        const { data } = await api.get(`/admin/orders?${queryString}`);
+        const endpoint = isAdmin ? "/admin/orders" : "/seller/orders";
+        const { data } = await api.get(`${endpoint}?${queryString}`);
         dispatch({
             type: "GET_ADMIN_ORDERS",
             payload: data.content,
