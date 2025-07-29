@@ -37,7 +37,7 @@ const dispatch = useDispatch();
                 categoryId: selectedCategory.categoryId,
             };
             dispatch(addNewProductFromDashboard(
-                sendData, toast, reset, setLoader, setOpen
+                sendData, toast, reset, setLoader, setOpen, isAdmin
             ));
         } else {
             const sendData = {
