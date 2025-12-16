@@ -6,7 +6,7 @@ import org.springframework.web.multipart.MultipartFile;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
-import java.nio.file.Paths;
+import java.nio.file.Path;
 import java.util.UUID;
 
 @Service
@@ -23,7 +23,7 @@ public class FileServiceImpl implements FileService {
         if (!folder.exists())
             folder.mkdir();
 
-        Files.copy(file.getInputStream(), Paths.get(filePath));
+        Files.copy(file.getInputStream(), Path.of(filePath));
         return fileName;
     }
 }
