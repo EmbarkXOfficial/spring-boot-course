@@ -4,12 +4,18 @@ import { Link } from "react-router-dom";
 import ItemContent from "./ItemContent";
 import CartEmpty from "./CartEmpty";
 import { formatPrice } from "../../utils/formatPrice";
+import { fetchProducts } from "../../store/actions/index.js";
+import { useEffect } from "react";
 
 const Cart = () => {
     const dispatch = useDispatch();
     const { cart } = useSelector((state) => state.carts);
     const newCart = { ...cart };
 
+    useEffect(() => {
+        dispatch(fetchProducts())
+    }, []);
+    
     newCart.totalPrice = cart?.reduce(
         (acc, cur) => acc + Number(cur?.specialPrice) * Number(cur?.quantity), 0
     );
