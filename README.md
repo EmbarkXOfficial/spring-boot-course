@@ -44,7 +44,7 @@ From using AI tools daily to architecting multi-agent systems, all grounded in t
 
 **Use AI → Build with AI → Architect AI Systems**
 
-### 01 · Use AI: [AI Productivity for Developers](https://embarkx.com/ai-productivity) ✅ Live
+### 01 · Use AI: [AI Productivity for Developers](https://embarkx.com/ai-productivity)
 *Udemy: GenAI & AI Agents for Java Spring Boot Devs | Copilot, Claude*
 
 Master the AI tools that make you a far more productive Java developer, and build AI agents that do real engineering work.
@@ -53,7 +53,7 @@ Master the AI tools that make you a far more productive Java developer, and buil
 
 **Outcome:** Ship faster, write better code, spend less time on boilerplate.
 
-### 02 · Build with AI: [AI-Powered Applications](https://embarkx.com/spring-ai) ✅ Live
+### 02 · Build with AI: [AI-Powered Applications](https://embarkx.com/spring-ai)
 *Udemy: AI-Powered Java Applications with Spring AI 2.0 & Spring Boot 4*
 
 Go beyond using AI tools and build production-ready AI applications, from your first ChatClient call to a full streaming chatbot.
@@ -62,15 +62,12 @@ Go beyond using AI tools and build production-ready AI applications, from your f
 
 **Outcome:** Build Java apps that use LLMs as a core component, not a bolt-on.
 
-### 03 · Architect Agents: Multi-Agent Systems 🚧 Coming Soon
+### 03 · Architect Agents: [Multi-Agent Systems](https://embarkx.com/multi-agent)
 Design, build and orchestrate systems where multiple AI agents collaborate, all in Java.
 
 `Multi-Agent Patterns` `Agent Orchestration` `Observability`
 
 **Outcome:** Architect production-grade multi-agent systems, a rare skill set among Java developers today.
-
-👉 **[Join the waitlist](https://embarkx.com/roadmap#waitlist)** for early access and launch pricing.
-
 ---
 
 ## 🎯 Deep Dive Specializations
